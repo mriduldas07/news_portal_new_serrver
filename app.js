@@ -3,6 +3,10 @@ const cors = require("cors");
 const { UserRouter } = require("./src/app/user/user.route");
 const { CategoryRouter } = require("./src/app/category/category.route");
 const { NewsRouter } = require("./src/app/news/news.route");
+const { UserReading } = require("./src/app/userReading/userReading.model");
+const {
+  UserReadingRouter,
+} = require("./src/app/userReading/userReading.route");
 
 const app = express();
 
@@ -14,6 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/", UserRouter);
 app.use("/", CategoryRouter);
 app.use("/", NewsRouter);
+app.use("/", UserReadingRouter);
 
 app.get("/", (req, res) => {
   res.send("Hello World from news-portal!");

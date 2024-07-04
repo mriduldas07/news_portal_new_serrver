@@ -14,7 +14,7 @@ const router = require("express").Router();
 router.post("/create-news", auth("reporter"), createNews);
 router.get(
   "/news/:id",
-  //   auth("reader", "reporter", "editor",),
+  auth("reader", "reporter", "editor"),
   viewsCount,
   getSingleNews
 );

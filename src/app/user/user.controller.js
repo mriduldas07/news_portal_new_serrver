@@ -11,7 +11,6 @@ module.exports.createUser = async (req, res) => {
     return res.status(200).json(newData);
   }
   const result = await User.create(user);
-  console.log(result);
   const response = createToken(result);
   return res.status(201).json(response);
 };
